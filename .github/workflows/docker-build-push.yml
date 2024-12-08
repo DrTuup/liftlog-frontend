@@ -19,6 +19,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          push: false
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/app:latest
         if: github.ref == 'refs/heads/main'
